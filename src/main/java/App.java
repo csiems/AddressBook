@@ -15,34 +15,34 @@ public class App {
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
-    get("/albums", (request, response) -> {
+    get("/", (request, response) -> {
       HashMap<String, Object> model = new HashMap<String, Object>();
-      model.put("albumsArray", Organizer.all());
-      model.put("template", "templates/albums.vtl");
+      model.put("contacts", Contact.all());
+      model.put("template", "templates/index.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
-    get("albums/new", (request, response) -> {
+    get("index/new", (request, response) -> {
       HashMap<String, Object> model = new HashMap<String, Object>();
-      model.put("template", "templates/albums-form.vtl");
+      model.put("template", "templates/contacts-form.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
-    post("/albums", (request, response) -> {
+    post("/", (request, response) -> {
       HashMap<String, Object> model = new HashMap<String, Object>();
-      String artist = request.queryParams("artist");
-      String album = request.queryParams("album");
-      Organizer organizer = new Organizer(artist, album);
-      model.put("organizer", organizer);
+      String firstName = request.queryParams("firstName");
+      String lastName = request.queryParams("lastName");
+      Contact contact = new Contact(firstName, lastName);
+      model.put("contact", contact);
       model.put("template", "templates/confirmation.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
-    get("/albums/:id", (request, response) -> {
+    get("/index/:id", (request, response) -> {
       HashMap<String, Object> model = new HashMap<String, Object>();
-      Organizer organizer = Organizer.find(Integer.parseInt(request.params(":id")));
-      model.put("organizer", organizer);
-      model.put("template", "templates/album.vtl");
+      Contact contact = Contact.find(Integer.parseInt(request.params(":id")));
+      model.put("contact", contact);
+      model.put("template", "templates/contact.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 

@@ -24,28 +24,18 @@ public class AppTest extends FluentTest {
   @Test
     public void rootTest() {
       goTo("http://localhost:4567/");
-      assertThat(pageSource()).contains("CD Organizer");
+      assertThat(pageSource()).contains("Address Book");
     }
 
   @Test
-    public void albumIsCreatedTest() {
+    public void contactIsCreatedTest() {
     goTo("http://localhost:4567/");
-    click("a", withText ("Add A New Album"));
-    fill("#artist").with("David Bowie");
-    fill("#album").with("Hunky Dory");
+    click("a", withText ("Add A New Contact"));
+    fill("#firstName").with("David");
+    fill("#secondName").with("Bowie");
     submit(".btn");
-    assertThat(pageSource()).contains("Your CD has been saved.");
+    assertThat(pageSource()).contains("Your Contact has been saved.");
   }
 
-  @Test
-  public void albumIsDisplayedTest() {
-  goTo("http://localhost:4567/albums/new");
-  fill("#artist").with("David Bowie");
-  fill("#album").with("Hunky Dory");
-  submit(".btn");
-  assertThat(pageSource()).contains("Your CD has been saved.");
-  click("a", withText("View All Albums"));
-  assertThat(pageSource()).contains("David Bowie");
-}
 
 }

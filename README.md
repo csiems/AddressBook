@@ -1,9 +1,9 @@
 #Cd Organizer
 
 #### Organize your CDs with an artist name!
-#### January 11, 2016.
+#### January 12, 2016.
 
-#### By Kassidy Douglas and Chris Siems
+#### By Nathan Romike and Chris Siems
 
 ## Description
 

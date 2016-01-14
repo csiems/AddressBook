@@ -1,3 +1,8 @@
-<h1>Your Contact has been saved.</h1>
+#if ($contact)
+  <h1>$contact.getfirstName() $contact.getLastName()</h1>
+#else
+  <h1> Task not found </h1>
+#end
+
 <a href="/" class="btn btn-success form-control">View Contacts</a>
 <a href="/index/new" class="btn btn-info form-control">Add A New Contact</a>

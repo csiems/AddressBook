@@ -1,4 +1,19 @@
-<h1>CD Organizer</h1>
+<h1>Address Book</h1>
+<h2>$contact.getFirstName()</h2>
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      #foreach ($contact in $contacts)
+      <td><a href="/index/$contact.getId()">$contact.getFirstName() $contact.getLastName()</a></td>
+    </tr>
+      #end
+  </tbody>
+</table>
+<br>
 
-<a href="/albums" class="btn btn-success form-control">View All Albums</a>
-<a href="/albums/new" class="btn btn-info form-control">Add A New Album</a>
+<a href="/index/new" class="btn btn-info form-control">Add A New Contact</a>

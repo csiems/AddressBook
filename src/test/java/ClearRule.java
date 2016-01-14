@@ -5,6 +5,6 @@ public class ClearRule extends ExternalResource {
   protected void before() { }
 
   protected void after() {
-    Organizer.clear();
+    Contact.clear();
   }
 }
