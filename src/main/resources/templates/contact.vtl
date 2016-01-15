@@ -1,8 +1,20 @@
 #if ($contact)
-  <h1>$contact.getfirstName() $contact.getLastName()</h1>
+  <h1>$contact.getFirstName()
+    #if ($contact.getMiddleInitial())
+      $contact.getMiddleInitial()
+    #end
+  $contact.getLastName()</h1>
+  #if ($contact.getBirthDate())
+    <h2>Birthday: $contact.getBirthDate()</h2>
+  #end
+  #foreach ($phone in $contact.getAllPhones())
+      <h2>$phone.getPhoneType(): ($phone.getAreaCode)$phone.getMainNumber()</h2>
+  #end
 #else
   <h1> Task not found </h1>
 #end
 
+<a href="/index/$contact.getId()/addbirth" class="btn btn-default form-control">Add $contact.getFirstName()'s Birthday</a>
+<a href="/index/$contact.getId()/addphone" class="btn btn-default form-control">Add A Phone Number for $contact.getFirstName()</a>
 <a href="/" class="btn btn-success form-control">View Contacts</a>
 <a href="/index/new" class="btn btn-info form-control">Add A New Contact</a>

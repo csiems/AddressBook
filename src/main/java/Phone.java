@@ -11,6 +11,15 @@ public class Phone {
     mMainNumber = mainNumber;
   }
 
-  
+    public String getPhoneType() {
+      return mType;
+    }
 
+    public Integer getAreaCode() {
+      return mAreaCode;
+    }
+
+    public Integer getMainNumber() {
+      return mMainNumber;
+    }
 }

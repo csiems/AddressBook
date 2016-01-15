@@ -1,0 +1,12 @@
+<h1>Add $contact.getFirstName()'s birthday:</h1>
+
+<form action="/index/$contact.getId()" method="post">
+  <label for="birthMonth">Month</label>
+  <input id="birthMonth" name="birthMonth" type="number" max="12"><br>
+  <label for="birthDay">Day</label>
+  <input id="birthDay" name="birthDay" type="number" max="31"><br>
+  <label for="birthYear">Year</label>
+  <input id="birthYear" name="birthYear" type="number" max="9999"><br>
+  <br>
+  <button type="submit" class="btn btn-info">Add Birthday</button>
+</form>

@@ -1,0 +1,17 @@
+<h1>Add $contact.getFirstName()'s phone number(s):</h1>
+
+<form action="/index/$contact.getId()" method="post">
+  <br>
+  <label>Work</label>
+  <input type="radio" name="phoneType" value="Work" type="text">
+  <label>Home</label>
+  <input type="radio" name="phoneType" value="Home" type="text">
+  <label>Cell</label>
+  <input type="radio" name="phoneType" value="cell" type="text"><br>
+  <label for="phoneAc">Area Code</label>
+  <input id="phoneAc" name="phoneAc" type="text" max="999">
+  <label for="phoneNumber">Phone Number</label>
+  <input id="phoneNumber" name="phoneNumber" type="text" max="9999999">
+  <br>
+  <button type="submit" class="btn btn-info">Add Birthday</button>
+</form>
