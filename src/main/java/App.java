@@ -29,8 +29,9 @@ public class App {
       String firstName = request.queryParams("firstName");
       String lastName = request.queryParams("lastName");
       Contact contact = new Contact(firstName, lastName);
-      model.put("contact", contact);
-      model.put("template", "templates/confirmation.vtl");
+      // model.put("contact", contact);
+      model.put("contacts", Contact.all());
+      model.put("template", "templates/index.vtl");
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
@@ -78,7 +79,8 @@ public class App {
           contact.addPhone(phone);
         }
 
-        model.put("template", "templates/confirmation.vtl");
+        model.put("contacts", Contact.all());
+        model.put("template", "templates/index.vtl");
         return new ModelAndView(model, layout);
         }, new VelocityTemplateEngine());
   }

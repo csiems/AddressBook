@@ -8,7 +8,7 @@
     <h2>Birthday: $contact.getBirthDate()</h2>
   #end
   #foreach ($phone in $contact.getAllPhones())
-      <h2>$phone.getPhoneType(): ($phone.getAreaCode)$phone.getMainNumber()</h2>
+      <h2>$phone.getPhoneType() $phone.getAreaCode() $phone.getMainNumber()</h2>
   #end
 #else
   <h1> Task not found </h1>
